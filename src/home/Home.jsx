@@ -6,6 +6,8 @@ import HomeGrid from '../components/homegrid';
 import PromisSec from '../components/PromisSec';
 import QuoteSec from '../components/QuoteSec';
 import TypesSkinn from '../components/TypesSkinn';
+import Header from '../components/Header';
+import Sunscribe from '../components/Sunscribe';
 
 
 
@@ -16,6 +18,7 @@ function Home() {
     
     return (
         <>
+        <Header/>
             <Banner />
             <div  style={{backgroundColor:"rgba(236, 190, 197, 0.179)"}}>
             <CardsHome/>
@@ -31,7 +34,7 @@ function Home() {
 
             </section>
 
-
+            <Sunscribe/>
 
             {/* <!-- Footer--> */}
             <Footer />

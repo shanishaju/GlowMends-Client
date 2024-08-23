@@ -6,7 +6,7 @@ function Footer() {
 
   return (
 
-  <div className='footermind row w-100 mt-5 p-3 ' style={{backgroundColor:"#fafafa"}}>
+  <div className='footermind row w-100  p-3 ' style={{backgroundColor:"#fafafa"}}>
         <div className="col-md-4 p-4 ms-md-5">
             <h4 className='' style={{color:"#5e5c5c"}}>GlowMend</h4>
             <p style={{textAlign:'justify'}}>GlowMend is India's first handcrafted customised 100% natural makeup brand, specifically for the Indian skin tone. Tinge products are paraben free, sulphate-free and cruelty-free. </p>

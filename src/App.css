@@ -12,9 +12,9 @@
     margin: 0 5px;
 }
 .primise:hover {
-    transform: scale(0.9);
+    transform: scale(0.8);
     opacity: 0;
-    animation: zoomIn 3s ease-in-out forwards;
+    animation: zoomIn 1s ease-in-out forwards;
   }
   
   @keyframes zoomIn {

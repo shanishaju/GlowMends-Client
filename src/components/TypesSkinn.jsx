@@ -10,6 +10,11 @@ function TypesSkinn() {
             <div className="row m-5">
                 <p className='text-center' style={{ fontSize: "40px" }}>Shop By Brand
                 </p>
+                <div className="circle-container mb-5">
+                            <div className="circle"></div>
+                            <div className="circle"></div>
+                            <div className="circle"></div>
+                        </div>
                 <div className="col-md-1"></div>
                 <div className="col-md-4 skintypes ms-5 col-sm-12 d-flex align-items-center justify-content-center position-relative" style={{ backgroundColor: "rgb(236, 190, 197)", borderRadius: "10px", width: '25%', height: "70vh" }}>
                     <img src={skin} className='typeimage' alt="Skin Care" style={{ width: "100%", borderRadius: "10px" }} />

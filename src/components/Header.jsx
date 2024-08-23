@@ -1,24 +1,26 @@
+import { faBagShopping, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 function Header() {
   return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav className="navbar navbar-expand-lg " style={{backgroundColor:"#ffcad4"}} id="mainNav">
             <div className="container">
-                <a className="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
-                <button clclassNameass="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i className="fas fa-bars ms-1"></i>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarResponsive">
-                    <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li className="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li className="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li className="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li className="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li className="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            
+                <div className="collapse navbar-collapse " id="navbarResponsive">
+                    <ul className="navbar-nav text-uppercase  py-4 py-lg-0 ">
+                        <li className="nav-item" ><a class="nav-link" href="#services" style={{color:"#76453f",fontSize:'20px'}}>Home</a></li>
+                        <li className="nav-item"><a class="nav-link" href="#portfolio" style={{color:"#76453f",fontSize:'20px'}}>Shop</a></li>
+                        <li className="nav-item"><a class="nav-link" href="#about" style={{color:"#76453f",fontSize:'20px'}}>Gifts</a></li>
+                        <li className="nav-item"><a class="nav-link" href="#contact" style={{color:"#76453f",fontSize:'20px'}}>Contact</a></li>
                     </ul>
                 </div>
+                <ul className="navbar-nav text-uppercase  py-4 py-lg-0 ">
+                        <li className="nav-item" ><FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#76453f", fontSize:'20px'}} /></li>
+                        <li className="nav-item"><FontAwesomeIcon icon={faUser} style={{color: "#76453f", fontSize:'20px'}} /></li>
+                        <li className="nav-item"><FontAwesomeIcon icon={faBagShopping} style={{color: "#76453f",fontSize:'20px'}} /></li>
+                    </ul>
             </div>
         </nav>
     </>
