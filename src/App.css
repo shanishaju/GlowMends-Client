@@ -11,3 +11,42 @@
     border-radius: 50%;
     margin: 0 5px;
 }
+.primise:hover {
+    transform: scale(0.9);
+    opacity: 0;
+    animation: zoomIn 3s ease-in-out forwards;
+  }
+  
+  @keyframes zoomIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .quotes p{
+    font-family: "Satisfy", cursive;
+    font-style: normal;
+
+
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #76453f;
+    font-size: 30px;
+    font-weight: 800;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1; /* Ensure the text appears above the image */
+}
+
+
+.skintypes:hover .overlay-text {
+    opacity: 9;
+}

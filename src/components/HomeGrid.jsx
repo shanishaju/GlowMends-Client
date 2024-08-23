@@ -9,7 +9,7 @@ function HomeGrid() {
     return (
         <>
             <div className="row m-5">
-                <div className="col-md-4 " >
+                <div className="col-md-4  col-sm-12" >
                     <div style={{
                         background: "linear-gradient(to left,rgb(211, 207, 207), rgb(223, 219, 219))",
                         borderRadius: "5px",
