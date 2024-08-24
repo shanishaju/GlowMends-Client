@@ -17,6 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/material": "^5.16.7",
+    "axios": "^1.7.5",
     "bootstrap": "^5.3.3",
     "infinite-react-carousel": "^1.2.11",
     "react": "^18.3.1",
