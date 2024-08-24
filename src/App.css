@@ -1,3 +1,4 @@
+/* three */
 .circle-container {
     display: flex;
     justify-content: center;
@@ -11,10 +12,11 @@
     border-radius: 50%;
     margin: 0 5px;
 }
+/* promisSec */
 .primise:hover {
-    transform: scale(0.8);
+    transform: scale(0.7);
     opacity: 0;
-    animation: zoomIn 1s ease-in-out forwards;
+    animation: zoomIn 2s forwards;
   }
   
   @keyframes zoomIn {
@@ -23,6 +25,7 @@
       opacity: 1;
     }
   }
+ /* QuoteSec */
   .quotes p{
     font-family: "Satisfy", cursive;
     font-style: normal;
@@ -49,4 +52,36 @@
 
 .skintypes:hover .overlay-text {
     opacity: 9;
+}
+
+/* Home Grid */
+.hover-div {
+  position: relative;
+  border-radius: 5px;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 192, 203, 0.636); /* Semi-transparent blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-div:hover .overlay {
+  opacity: 1;
+}
+
+.show-more-text {
+  color: white;
+  font-size: 24px;
+  text-align: center;
 }

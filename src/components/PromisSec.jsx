@@ -12,8 +12,10 @@ function PromisSec() {
   return (
     <>
     <div className='text-center pb-5 ' style={{backgroundColor:"rgba(236, 190, 197, 0.179)"}}>
+
+    <section className='primise'>
         <p className='p-5' style={{fontSize:"40px"}}>The Glowmend Promise</p>
-        <Row className='mt-5  pb-5 primise'>
+        <Row className='mt-5  pb-5'>
             <Col lg={1}></Col>
             <Col lg={2} md={2} sm={12} className='ms-5'>
             <img className='' src={allskin}  alt="noimg" style={{width:'200px'}}  />
@@ -31,6 +33,7 @@ function PromisSec() {
 
 
         </Row>
+        </section>
 
     </div>
       
