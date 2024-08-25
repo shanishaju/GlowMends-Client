@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import bgcolor from '../assets/glowmendFemaleNoBg.png'
 import { Col, Row } from 'react-bootstrap'
+import { registerApi } from '../services/allApi'
 
 function Login({ register }) {
 
@@ -16,6 +17,18 @@ function Login({ register }) {
     })
     console.log(userDetails);
     
+const handleRegister =async()=>{
+
+    const {firstname,lastname,email,password} = userDetails
+        if(!firstname || !lastname || !email || !password){
+            alert(" Please fill the form completely")
+        }
+        else{
+            const result =   await registerApi(userDetails)
+            console.log(result);
+        }
+}
+
     return (
         <>
             <Row>
@@ -57,7 +70,7 @@ function Login({ register }) {
                             </div>
                             {register ?
                                 <div>
-                                    <button className='btn btn-danger mt-4 w-100'> Sign Up</button>
+                                    <button className='btn btn-danger mt-4 w-100' onClick={handleRegister}> Sign Up</button>
                                     <p className='mt-4 text-center'>already a use click here to <Link to={'/login'}>login</Link></p>
                                 </div>
                                 :
