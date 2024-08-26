@@ -83,7 +83,8 @@ function CardsHome() {
 
                 </div>
                 <div className="d-flex justify-content-center pb-5">
-                    <button className="btn btn-danger">Shop All</button>
+                    <a href="/products"> <button className="btn btn-danger">Shop All</button>
+                    </a>
                 </div>
             </div>
         </>

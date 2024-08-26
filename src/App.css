@@ -85,3 +85,80 @@
   font-size: 24px;
   text-align: center;
 }
+
+/* login */
+.loginfrom{
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .loginfrom {
+      margin-top: auto;
+      margin-left:150px ;
+  }
+}
+@media (max-width: 576px) {
+  .loginfrom {
+    margin-top: -250px;
+    margin-left:50px 
+
+    
+  }
+}
+.loginwomen{
+  margin-top: auto;
+}
+/* For large screens */
+
+@media (min-width: 769px) {
+  .loginwomen {
+      width: 220%;
+      margin-top: 130px;
+      margin-left:190px ;
+  }
+}
+/* For medium screens  */
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .Logingirl {
+      width: 100%;
+      margin-top: 30px;
+  }
+}
+/* For small screens */
+
+@media (max-width: 576px) {
+  .Logingirl {
+      width: 100%; 
+      margin-top: 20px; 
+  }
+}
+/* login
+.Logingirl {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* For small screens */
+/* @media (max-width: 576px) {
+  .Logingirl {
+      width: 100%; 
+      margin-top: 20px; 
+  }
+} */
+
+/* For medium screens  */
+/* @media (min-width: 577px) and (max-width: 768px) {
+  .Logingirl {
+      width: 100%;
+      margin-top: 30px;
+  }
+} */
+
+/* For large screens (desktops) */
+/* @media (min-width: 769px) {
+  .Logingirl {
+      width: 230%;
+      margin-top: 50px;
+  }
+}  */
