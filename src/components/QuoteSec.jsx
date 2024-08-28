@@ -19,9 +19,9 @@ function QuoteSec() {
                     </span>
                 </div>
                 <div className="col-md-6">
-                    <img className='ms-5 rounded-circle m-3' src={girl} alt="noimg" />
-                </div>
-            </div>
+                    <img className='ms-5 rounded-circle m-3' src={girl} alt="noimg"  />
+                </div> 
+            </div>             
 
         </>
     )
