@@ -42,7 +42,7 @@ const handleLogin = async()=>{
      const  result = await loginApi({email,password})
      console.log(result);
      if(result.status == 200){
-        alert("Login Successful")
+        // alert("Login Successful")
         //store id in sesscion storage
         sessionStorage.setItem("existingUser",JSON.stringify(result.data.existingUser))
          sessionStorage.setItem("toekn",result.data.token)
