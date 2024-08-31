@@ -27,7 +27,8 @@ function Footer() {
             </p>
             <p className='mt-4'>Blog
             </p>
-            <p>About Us</p>
+           
+           <a href="/about-us" style={{textDecoration:"none"}}> <p>About Us</p></a>
             <p>Contact Us</p>
 
         </div>
