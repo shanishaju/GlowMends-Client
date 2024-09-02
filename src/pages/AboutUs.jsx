@@ -5,7 +5,11 @@ import Footer from '../components/Footer'
 import bannerImg from '../assets/About-banner.jpg'
 import logo from '../assets/bglady-removebg-preview.png'
 import girls from '../assets/girlsimg.png'
-import dropping from '../assets/groopping-removebg-preview.png'
+import grpserum from '../assets/grpserum.jpg'
+import team1 from '../assets/teamone.jpg'
+import team2 from '../assets/teamtwo.jpg'
+import team3 from '../assets/teamfour.jpg'
+
 
 
 function AboutUs() {
@@ -99,29 +103,117 @@ function AboutUs() {
                     sx={{
                         width: "100%",
                         height: "100vh",
-                        marginTop: "-100px",
-                        padding: "105px 200px 50px 80px",
-                        flexDirection: "row",
-                        flexWrap: "wrap",
-                        background: "linear-gradient(to top, #eae2cf, #c29983 )",
-                        justifyContent: "center", 
-                        textAlign: "center" 
+                        background: "linear-gradient(to top, #eae2cf, #bd9079 )",
+                        justifyContent: "center",
+                        textAlign: "center"
 
 
                     }}>
-                    <Stack>
-                        <p style={{ color: "#76453f", fontSize: "40px", }}>
-                                <span style={{ display: "block" }}>Harm♡nizing Nature and </span>
-                                <span style={{ display: "block" }}>Inn♡vation for Radiant Skincare</span>
-                            </p>
+                    <Stack
+                        sx={{
+                            width: "100%",
+                            height: "200vh",
+                            paddingLeft: "10%",
+                            paddingRight: "10%",
+                        }}>
+                        <p style={{ color: "#76453f", fontSize: "40px", paddingTop: "70px" }}>
+                            <span style={{ display: "block" }}>Harm♡nizing Nature and </span>
+                            <span style={{ display: "block" }}>Inn♡vation for Radiant Skincare</span>
+                        </p>
 
-                            <Stack>
-                                <img src={dropping} alt="" />
+                        <Stack
+                            sx={{
+                                flexDirection: "row",
+                                flexWrap: "wrap",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                marginTop: "30px"
+                            }}
+                        >
+
+                            <div style={{ width: "30%", height: "90%", borderRadius: "30%", borderLeft: "9px dotted #76453f", }} >
+                                <img src={grpserum} alt="" style={{ width: "90%", height: "100%", borderRadius: "30%", paddingTop: "10px", paddingBottom: "10px" }} />
+
+                            </div>
+
+                            <Stack
+                                sx={{
+                                    width: "40%",
+                                    marginLeft: "50px"
+
+                                }}>
+                                <p>At Gl♡w Mend, we believe in the perfect balance between the wisdom of nature and the advancements of science. Our products are meticulously crafted to bring out your skin's natural radiance, combining the finest natural ingredients with cutting-edge innovation. We are committed to delivering skincare that not only enhances your beauty but also nurtures your skin's health, ensuring you glow from within.
+
+                                </p>
                             </Stack>
+                        </Stack>
 
                     </Stack>
-                    
 
+
+                </Stack>
+
+                {/* section */}
+                <Stack
+                    sx={{
+                        width: "100%",
+                        height: "100vh",
+                        background: "linear-gradient(to top, #c29983,#eae2cf )",
+
+
+                    }}>
+                    <p style={{
+                        color: "#76453f", fontSize: "40px", justifyContent: "center",
+                        textAlign: "center", marginTop: "5%"
+                    }}>Say Hello to Our Team
+                    </p>
+                    <Stack
+                        sx={{
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color:"#76453f"
+
+                        }}
+                    >
+                        <Stack
+                            sx={{
+                                width: "20%"
+                                
+
+                            }}
+                        >
+                            <img src={team1} alt="" style={{ width: "100%",  borderRadius:"20%"}} />
+                            <p className='d-flex align-items-center justify-content-center mt-2'>Emma Grace Mitchell</p>
+                            <p className='d-flex align-items-center justify-content-center '>Co-founder</p>
+
+                        </Stack>
+                        <Stack
+                            sx={{
+                                width: "20%",
+                                marginLeft: "10px",
+                                marginRight: "10px"
+
+
+                            }}>
+                            <img src={team2} alt="" style={{ width: "100%", borderRadius:"20%" }} />
+                            <p className='d-flex align-items-center justify-content-center mt-2'>Sophia Marie Thompson</p>
+                            <p className='d-flex align-items-center justify-content-center '>Co-founder</p>
+
+                        </Stack>
+                        <Stack
+                            sx={{
+                                width: "20%",
+                            }}>
+                            <img src={team3} alt="" style={{ width: "100%", height: "100%", borderRadius:"20%" }} />
+                            <p className='d-flex align-items-center justify-content-center mt-2'>Agarika Roy</p>
+                            <p className='d-flex align-items-center justify-content-center '>Co-founder</p>
+
+                        </Stack>
+                    </Stack>
                 </Stack>
 
             </Stack>
