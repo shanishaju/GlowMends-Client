@@ -83,8 +83,8 @@ function CardsHome() {
 
                 </div>
                 <div className="d-flex justify-content-center pb-5">
-                    <a href="/products"> <button className="btn btn-danger">Shop All</button>
-                    </a>
+                <button className='btn  ' style={{ backgroundColor: "#76453f", color: "#fff" }}>Shop All</button>
+
                 </div>
             </div>
         </>

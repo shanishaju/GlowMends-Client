@@ -45,7 +45,7 @@ function AboutUs() {
                                 textAlign: "center",
                             }}
                         >
-                            <h1 style={{ color: "#76453f" }}>Nurture Y♡ur Skin, Naturally</h1>
+                            <p style={{ color: "#76453f" ,fontSize:"50px"}}>Nurture Y♡ur Skin, Naturally</p>
                             <p style={{ color: "#76453f", fontSize: "20px" }}>
                                 <span style={{ display: "block" }}>Unveil your natural glow with skincare products crafted from the earth's purest ingredients.</span>
                                 <span style={{ display: "block" }}>Experience beauty the way nature intended.</span>
@@ -166,7 +166,7 @@ function AboutUs() {
                     <p style={{
                         color: "#76453f", fontSize: "40px", justifyContent: "center",
                         textAlign: "center", marginTop: "5%"
-                    }}>Say Hello to Our Team
+                    }}>Say Hello to ♡ur Team
                     </p>
                     <Stack
                         sx={{

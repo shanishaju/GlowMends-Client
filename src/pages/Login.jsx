@@ -65,7 +65,9 @@ const handleLogin = async()=>{
 
     return (
         <>
-            <Row>
+            <Row 
+           
+            >
                 <Col xs={12} md={2} sm={12}>
                     <img className='loginwomen' src={bggirl} alt="" />
                 </Col>

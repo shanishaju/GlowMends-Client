@@ -5,6 +5,8 @@ import Login from './pages/Login'
 import Home from './home/Home'
 import AllProducts from './pages/AllProducts'
 import AboutUs from './pages/AboutUs'
+import Contact from './pages/Contact'
+import Cart from './pages/Cart'
 
 function App() {
 
@@ -16,6 +18,10 @@ function App() {
           <Route path='/' element= {<Home/> } />
           <Route path='/products' element={<AllProducts/>}/>
           <Route path='/about-us' element={<AboutUs/>}/>
+          <Route path='/contact-us' element={<Contact/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+
+
 
 
         </Routes> 
