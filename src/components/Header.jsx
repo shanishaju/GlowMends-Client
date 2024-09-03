@@ -12,7 +12,7 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav text-uppercase py-4 py-lg-0">
                         <li className="nav-item"><a className="nav-link" href="/about-us" style={{color:"#76453f",fontSize:'20px'}}>About</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#portfolio" style={{color:"#76453f",fontSize:'20px'}}>Shop</a></li>
+                        <li className="nav-item"><a className="nav-link" href="/products" style={{color:"#76453f",fontSize:'20px'}}>Shop</a></li>
                         <li className="nav-item"><a className="nav-link" href="#about" style={{color:"#76453f",fontSize:'20px'}}>Gifts</a></li>
                         <li className="nav-item"><a className="nav-link" href="/contact-us" style={{color:"#76453f",fontSize:'20px'}}>Contact</a></li>
                     </ul>

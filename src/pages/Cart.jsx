@@ -10,8 +10,8 @@ function Cart() {
   return (
     <>
       <Header />
-      <div className="container-fluid" style={{ marginTop: '5%' }}>
-        <p className="text-center" style={{ color: "#76453f", fontSize: "50px" }}> Y♡ur Cart</p>
+      <div className="container" style={{ marginTop: '5%' }}>
+        <p className="text-center" style={{ color: "#76453f", fontSize: "50px" , }}> Y♡ur Cart</p>
 
         {/* item in cart */}
         <div className="row">

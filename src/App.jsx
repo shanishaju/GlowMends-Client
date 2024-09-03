@@ -20,6 +20,9 @@ function App() {
           <Route path='/about-us' element={<AboutUs/>}/>
           <Route path='/contact-us' element={<Contact/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          
+
+
 
 
 
