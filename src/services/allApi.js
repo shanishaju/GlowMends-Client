@@ -10,3 +10,9 @@ export const registerApi = async (reqBody) => {
 export const loginApi = async(reqBody)=>{
     return await commonApi("POST",`${serverUrl}/login`,reqBody,"")
 }
+
+//all product request
+export const allProductApi = async()=>{
+    return await commonApi("GET",`${serverUrl}/allproducts`,"","")
+
+}
