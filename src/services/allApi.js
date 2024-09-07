@@ -12,7 +12,14 @@ export const loginApi = async(reqBody)=>{
 }
 
 //all product request
-export const allProductApi = async()=>{
-    return await commonApi("GET",`${serverUrl}/allproducts`,"","")
+export const allProductApi = async(searchKey)=>{
+    return await commonApi("GET",`${serverUrl}/allproducts?search=${searchKey}`,"","")
 
 }
+
+//contact 
+export const contactApi = async(reqBody)=>{
+    return await commonApi("POST",`${serverUrl}/contact`,reqBody,"")
+}
+
+//query parameter = baseurl?key=value

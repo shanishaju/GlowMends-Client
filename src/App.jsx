@@ -7,6 +7,7 @@ import AllProducts from './pages/AllProducts'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import Cart from './pages/Cart'
+import ProductDetails from './components/ProductDetails'
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
           <Route path='/about-us' element={<AboutUs/>}/>
           <Route path='/contact-us' element={<Contact/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/productDetails' element={<ProductDetails/>}/>
+
           
 
 
