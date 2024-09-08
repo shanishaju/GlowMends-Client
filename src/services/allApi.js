@@ -22,4 +22,17 @@ export const contactApi = async(reqBody)=>{
     return await commonApi("POST",`${serverUrl}/contact`,reqBody,"")
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //query parameter = baseurl?key=value
