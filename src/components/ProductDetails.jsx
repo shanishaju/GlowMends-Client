@@ -3,9 +3,39 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import img from '../assets/lipbalmforu.jpg'
-import { Link } from 'react-router-dom'
+import { addToCartApi } from '../services/allApi'
 
 function ProductDetails() {
+  
+   
+    const handleAddToCart = async ( productId, quantity = 1) => {
+        const user = JSON.parse(sessionStorage.getItem("existingUser"));
+        const userId = user ? user._id : null; 
+        const reqBody = { userId, productId, quantity };
+        
+        const reqHeader = {
+            'Content-Type': 'application/json',
+        };
+        console.log( userId,"user Id" );
+        console.log( productId,"product Id");
+        console.log( quantity,"quantity");
+
+      try {
+            const result = await addToCartApi(reqBody, reqHeader);
+    
+            if (result.status === 200) {
+                alert("Product added to cart");
+            } else {
+                console.error("Error response from API:", result);
+                alert("Error adding product to cart");
+            }
+        } catch (error) {
+            console.error("Error in handleAddToCart:", error);
+            alert("Failed to add product to cart");
+        }
+    };
+    
+    
     return (
         <>
             <Header />
@@ -56,7 +86,7 @@ function ProductDetails() {
                             border: "none",
                             color: "#76453f",
                             '& p': {
-                                opacity: 0, // Start with opacity 0 for the fade effect
+                                opacity: 0,
                                 animation: "fadeIn 2s ease-in-out forwards"
                             },
                             '& p:first-of-type': {
@@ -78,7 +108,7 @@ function ProductDetails() {
                         <p>
                             Lush Lips is a luxurious lip balm that hydrates, softens, and leaves your lips with a silky smooth finish.  Lush Lips is a premium, all-natural lip balm designed to deliver intense hydration and softness. Infused with nourishing ingredients like shea butter, jojoba oil, and vitamin E, it creates a protective barrier to lock in moisture, preventing chapped and dry lips. The rich formula not only soothes and repairs but also enhances the natural beauty of your lips with a subtle, silky sheen.  Whether you're facing harsh weather or just want everyday hydration, Lush Lips provides the perfect balance of care and luxury, ensuring your lips stay smooth, supple, and irresistibly soft all day long. Its lightweight texture makes it ideal for layering under lipstick or wearing alone for a naturally radiant look.
                         </p>
-                        <Link to={"/cart"} style={{textDecoration:"none"}}>
+                     
                             <Stack
                                 sx={{
                                     width: "30%"
@@ -103,11 +133,12 @@ function ProductDetails() {
                                         e.target.style.borderColor = '#76453f';
                                     }}
 
+                                    onClick={handleAddToCart()}
+
                                 >
                                     Cart
                                 </button>
                             </Stack>
-                        </Link>
                     </Stack>
 
                 </Stack>

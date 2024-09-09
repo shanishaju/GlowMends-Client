@@ -8,6 +8,8 @@ import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import Cart from './pages/Cart'
 import ProductDetails from './components/ProductDetails'
+import TremsndConditions from './pages/TremsndConditions'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
 
@@ -23,6 +25,11 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/productDetails' element={<ProductDetails />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/terms-of-service" element={<TremsndConditions/>} />
+        <Route path='*' element={<PageNotFound/>} />
+
+
+
       </Routes>
     </>
   )

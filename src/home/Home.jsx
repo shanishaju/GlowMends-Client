@@ -18,7 +18,6 @@ function Home() {
     
     return (
         <>
-        <Header/>
             <Banner />
             <div  style={{backgroundColor:"rgba(236, 190, 197, 0.179)"}}>
             <CardsHome/>

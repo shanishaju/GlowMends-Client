@@ -18,7 +18,9 @@ function AllProducts() {
 
   }
   console.log(searchKey);
-
+const handleProduct= async()=>{
+  
+}
   useEffect(() => {
     getAllProducts()
   }, [searchKey]);
@@ -26,11 +28,12 @@ function AllProducts() {
 
   return (
     <>
-      <Header />
       <Stack
         sx={{
           background: "linear-gradient(to top, #ba8d76, #eae2cf)",
         }}>
+                <Header />
+
         <p className="text-center" style={{ color: "#76453f", fontSize: "50px", marginTop: "30px" }}> Pr♡ducts </p>
         <Stack className='container'
           sx={{
@@ -145,7 +148,10 @@ function AllProducts() {
                           e.target.style.borderColor = '#76453f';
                         }}
 
+                        onClick={handleProduct}
+
                       >
+                        
                         Shope Now
                       </button>
                     </Link>

@@ -17,7 +17,8 @@ function Footer() {
                 </p>
                 <p className='mt-4'><Link to={'/'} style={{ textDecoration:"none"}}>Track Your Order</Link> </p>
                 <p><Link to={'/project'} style={{ textDecoration:"none"}}>Shipping Policy</Link></p>
-                <p><Link to={'/project'} style={{ textDecoration:"none"}}>Returns & Exchange</Link></p>
+                <p><Link to={'/terms-of-service'} style={{ textDecoration:"none"}}>Terms of service
+                </Link></p>
         
 
             </div>

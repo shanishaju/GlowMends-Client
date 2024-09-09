@@ -59,6 +59,7 @@ function Login({ register }) {
                 if (result.status === 200) {
                     sessionStorage.setItem("existingUser", JSON.stringify(result.data.existingUser));
                     sessionStorage.setItem("token", result.data.token);
+
                     setUserDetails({
                         firstname: "",
                         lastname: "",

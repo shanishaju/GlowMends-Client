@@ -15,7 +15,6 @@ import team3 from '../assets/teamfour.jpg'
 function AboutUs() {
     return (
         <>
-            <Header />
             <Stack>
                 {/* banner */}
                 <Stack
@@ -35,6 +34,8 @@ function AboutUs() {
                         }}
 
                     >
+                                    <Header />
+
                         <Stack
                             sx={{
                                 width: "100%",

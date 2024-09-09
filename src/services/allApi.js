@@ -22,9 +22,10 @@ export const contactApi = async(reqBody)=>{
     return await commonApi("POST",`${serverUrl}/contact`,reqBody,"")
 }
 
-
-
-
+// add to cart
+export const addToCartApi = async (reqBody, reqHeader) => {
+    return await commonApi("POST",`${serverUrl}/add-cart`, reqBody, reqHeader);
+}
 
 
 

@@ -1,4 +1,4 @@
-import { faBagShopping, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBagShopping, faHome, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -18,8 +18,8 @@ function Header() {
                     </ul>
                 </div>
                 <ul className="navbar-nav text-uppercase py-4 py-lg-0">
-                    <li className="nav-item"><FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#76453f", fontSize:'20px'}} /></li>
-                    <li className="nav-item"><FontAwesomeIcon icon={faUser} style={{color: "#76453f", fontSize:'20px'}} /></li>
+                    <Link to={'/'}><li className="nav-item"><FontAwesomeIcon icon={faHome} style={{color: "#76453f", fontSize:'20px'}} /></li></Link>
+                    <Link to={'/login'}><li className="nav-item"><FontAwesomeIcon icon={faUser} style={{color: "#76453f", fontSize:'20px'}} /></li></Link>
                     <Link to={'/cart'}><li className="nav-item"><FontAwesomeIcon icon={faBagShopping} style={{color: "#76453f",fontSize:'20px'}} /></li></Link>
                 </ul>
             </div>

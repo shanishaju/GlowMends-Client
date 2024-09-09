@@ -35,12 +35,17 @@ function Contact() {
   
   return (
     <>
-      <Header />
-      <Stack
+
+     <div style={{
+                background: "linear-gradient(to top, #ba8d76, #eae2cf)",
+
+     }}>
+            <Header />
+
+     <Stack
         sx={{
           width: '100%',
           height: "100vh",
-          background: "linear-gradient(to top, #ba8d76, #eae2cf)",
           display: "flex",
           alignItems: "center",
 
@@ -74,6 +79,7 @@ function Contact() {
 
 
       </Stack>
+     </div>
 
 
 
