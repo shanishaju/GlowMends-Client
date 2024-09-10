@@ -5,39 +5,40 @@ import Footer from './Footer'
 import img from '../assets/lipbalmforu.jpg'
 import { addToCartApi, getSingleProductApi } from '../services/allApi'
 import { useParams } from 'react-router-dom'
+import { serverUrl } from '../services/serverUrl'
 
 function ProductDetails() {
 
-     //Use const { id } = useParams(); to extract URL parameters in a React component.
-    const { slug } = useParams(); 
+    //Use const { id } = useParams(); to extract URL parameters in a React component.
+    const { slug } = useParams();
     console.log(slug);
     const [product, setProduct] = useState(null);
-  
+
     useEffect(() => {
         const fetchProduct = async () => {
-          try {
-            const response = await getSingleProductApi(slug); 
-            if (response.status === 200) {
-              setProduct(response.data); 
-            } else {
-              setError('Product not found');
+            try {
+                const response = await getSingleProductApi(slug);
+                if (response.status === 200) {
+                    setProduct(response.data);
+                } else {
+                    setError('Product not found');
+                }
+            } catch (error) {
+                setError('Error fetching product');
             }
-          } catch (error) {
-            setError('Error fetching product');
-          }
         };
-    
-        fetchProduct(); 
-      }, [slug]);
 
-    
+        fetchProduct();
+    }, [slug]);
 
-   
+
+
+
     // const handleAddToCart = async ( productId, quantity = 1) => {
     //     const user = JSON.parse(sessionStorage.getItem("existingUser"));
     //     const userId = user ? user._id : null; 
     //     const reqBody = { userId, productId, quantity };
-        
+
     //     const reqHeader = {
     //         'Content-Type': 'application/json',
     //     };
@@ -47,7 +48,7 @@ function ProductDetails() {
 
     //   try {
     //         const result = await addToCartApi(reqBody, reqHeader);
-    
+
     //         if (result.status === 200) {
     //             alert("Product added to cart");
     //         } else {
@@ -59,8 +60,8 @@ function ProductDetails() {
     //         alert("Failed to add product to cart");
     //     }
     // };
-    
-    
+
+
     return (
         <>
             <Stack
@@ -70,11 +71,11 @@ function ProductDetails() {
                     height: "120vh",
                     backgroundColor: "red",
                     background: "linear-gradient(to top, #ba8d76, #eae2cf)",
-                    
+
 
                 }}>
-                                <Header />
-         
+                <Header />
+
                 <p className="text-center" style={{ color: "#76453f", fontSize: "50px", marginTop: "30px" }}> Pr♡duct Details</p>
 
                 <Stack className='container'
@@ -83,7 +84,7 @@ function ProductDetails() {
                         flexDirection: "row",
                         flexWrap: "wrap",
                         marginTop: "50px",
-                        
+
 
 
                     }}>
@@ -93,7 +94,8 @@ function ProductDetails() {
                             alignItems: "start",
                             justifyContent: "center",
                             width: "40%",
-                            
+                            height:"100%",
+
                             paddingLeft: "100px",
                             '& img': {
                                 transition: "transform 0.3s ease-in-out", // Smooth transition effect
@@ -103,8 +105,11 @@ function ProductDetails() {
                             }
                         }}
                     >
-                        <img src={img} alt="" />
-                    </Stack>
+                        {product && product.productImage ? (
+                            <img src={`${serverUrl}/uploads/${product.productImage}`} alt={product.productName}  style={{width:"90%",height:"100%"}}/>
+                        ) : (
+                            <p>Image not available</p>
+                        )}                    </Stack>
                     <Stack
                         className='card'
                         sx={{
@@ -134,45 +139,45 @@ function ProductDetails() {
                     >
                         {product ? (
                             <div>
-                        <p>{product.productName}</p>
-                        
-    <p>$ {product.price}</p>
-    <p>{product.description}</p>
-    </div>
-) : (
-  <p>Loading...</p>
-)}
-                     
-                            <Stack
-                                sx={{
-                                    width: "30%"
-                                }}>
-                                <button
-                                    className=" pt-2 pb-2 ps-2 pe-2 mt-4 "
-                                    style={{
-                                        background: 'transparent',
-                                        border: '1px solid #76453f',
-                                        borderRadius: '20px',
-                                        cursor: 'pointer',
-                                        transition: 'all .3s ease',
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.target.style.transform = 'scale(1.125)';
-                                        e.target.style.color = '#76453f';
-                                        e.target.style.borderColor = '#76453f'
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.target.style.transform = 'scale(1)';
-                                        e.target.style.color = '#76453f';
-                                        e.target.style.borderColor = '#76453f';
-                                    }}
+                                <p>{product.productName}</p>
 
-                                    // onClick={handleAddToCart()}
+                                <p>Price: {product.price}</p>
+                                <p>{product.description}</p>
+                            </div>
+                        ) : (
+                            <p>Loading...</p>
+                        )}
 
-                                >
-                                    Cart
-                                </button>
-                            </Stack>
+                        <Stack
+                            sx={{
+                                width: "30%"
+                            }}>
+                            <button
+                                className=" pt-2 pb-2 ps-2 pe-2 mt-4 "
+                                style={{
+                                    background: 'transparent',
+                                    border: '1px solid #76453f',
+                                    borderRadius: '20px',
+                                    cursor: 'pointer',
+                                    transition: 'all .3s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.transform = 'scale(1.125)';
+                                    e.target.style.color = '#76453f';
+                                    e.target.style.borderColor = '#76453f'
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.transform = 'scale(1)';
+                                    e.target.style.color = '#76453f';
+                                    e.target.style.borderColor = '#76453f';
+                                }}
+
+                            // onClick={handleAddToCart()}
+
+                            >
+                                Cart
+                            </button>
+                        </Stack>
                     </Stack>
 
                 </Stack>

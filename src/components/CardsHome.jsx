@@ -14,6 +14,7 @@ import img4 from '../assets/serum3.jpg'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function CardsHome() {
 
@@ -55,7 +56,7 @@ function CardsHome() {
                             </Card>
                         </div>
                         <div className="col-md-3">
-                            <Card className='ms-3' style={{ width: '18rem', height:"100%", borderRadius: "10px" }}>
+                            <Card className='ms-3' style={{ width: '18rem', height: "100%", borderRadius: "10px" }}>
                                 <Card.Img className='' variant="top" src={img3} style={{ height: "200%" }} />
                                 <Card.Body>
                                     <Card.Title>ILLUMINATE - Glow Serum</Card.Title>
@@ -67,7 +68,7 @@ function CardsHome() {
                             </Card>
                         </div>
                         <div className="col-md-3">
-                            <Card className='ms-3' style={{ width: '18rem',height:"100%", borderRadius: "10px" }}>
+                            <Card className='ms-3' style={{ width: '18rem', height: "100%", borderRadius: "10px" }}>
                                 <Card.Img className='' variant="top" src={img4} style={{ height: "200%" }} />
                                 <Card.Body>
                                     <Card.Title>REJUVENATE - Night Serum        </Card.Title>
@@ -83,8 +84,10 @@ function CardsHome() {
 
                 </div>
                 <div className="d-flex justify-content-center pb-5">
-                <button className='btn  ' style={{ backgroundColor: "#76453f", color: "#fff" }}>Shop All</button>
+                    <Link to={'/products'}>
+                        <button className='btn  ' style={{ backgroundColor: "#76453f", color: "#fff" }}>Shop All</button>
 
+                    </Link>
                 </div>
             </div>
         </>
