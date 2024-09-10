@@ -30,8 +30,8 @@ function Footer() {
             </p>
            
            <a href="/about-us" style={{textDecoration:"none"}}> <p>About Us</p></a>
-            <p>Contact Us</p>
-
+           <a href="/contact-us" style={{textDecoration:"none"}}> <p>Contact Us</p></a>
+            
         </div>
         <div className="col-md-3 p-4">
             <p className='' style={{color:"#5e5c5c", fontSize:"20px"}} >Contact us</p>
@@ -48,7 +48,7 @@ function Footer() {
         </div>
         <div className='col-md-1'></div>
         <p className=' mt-4 d-flex align-items-center justify-content-center'>© 2024 GlowMend cosmetic privat limited.
-        Marketed By shani</p>
+        Marketed By.. <span><a href="https://www.linkedin.com/in/shanishaju/">Shani</a></span></p>
     </div>
     
   )

@@ -2,29 +2,44 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Stack } from '@mui/material'
-import { allProductApi } from '../services/allApi'
+import { allProductApi, getSingleProductApi } from '../services/allApi'
 import { serverUrl } from '../services/serverUrl'
 import { Link } from 'react-router-dom'
 
-function AllProducts() {
+function AllProducts( ) {
 
   const [allProducts, setAllProducts] = useState([])
   const [searchKey,setSearchKey] = useState("")
+  
+  //getId
+
+  const handleProduct = async () => {
+    const { _id  } = allProducts;  
+  
+    try {
+      const response = await getSingleProductApi(_id );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+ 
+ 
   //get products
   const getAllProducts = async () => {
     const result = await allProductApi(searchKey)
     setAllProducts(result.data)
+    // console.log(result.data);
+    
 
 
   }
-  console.log(searchKey);
-const handleProduct= async()=>{
-  
-}
+  // console.log(searchKey);
+
   useEffect(() => {
     getAllProducts()
   }, [searchKey]);
-
 
   return (
     <>
@@ -127,7 +142,7 @@ const handleProduct= async()=>{
                     {item.description.slice(0, 40)}{item.description.length > 100 ? "..." : ""}
                   </p>
                   <div className=" button    " style={{ textAlign: 'center' }}>
-                    <Link to={"/productDetails"}>
+                    <Link to={`/product/${item._id}`}>
                       <button
                         className=" pt-2 pb-2 ps-5 pe-5  "
                         style={{
@@ -152,7 +167,7 @@ const handleProduct= async()=>{
 
                       >
                         
-                        Shope Now
+                        View Product
                       </button>
                     </Link>
 

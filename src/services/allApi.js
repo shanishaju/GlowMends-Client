@@ -21,6 +21,12 @@ export const allProductApi = async(searchKey)=>{
 export const contactApi = async(reqBody)=>{
     return await commonApi("POST",`${serverUrl}/contact`,reqBody,"")
 }
+//get single product
+
+export const getSingleProductApi = async (_id, reqHeader) => {
+    return await commonApi("GET", `${serverUrl}/single-product/${_id}`, "", reqHeader);
+  };
+  
 
 // add to cart
 export const addToCartApi = async (reqBody, reqHeader) => {
