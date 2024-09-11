@@ -14,6 +14,8 @@ function ProductDetails() {
     console.log(slug);
     const [product, setProduct] = useState(null);
 
+    //id sending to server for getting single product details  
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -31,9 +33,32 @@ function ProductDetails() {
         fetchProduct();
     }, [slug]);
 
+    // add to cart
+    const handleAddToCart = async () => {
+        const user = JSON.parse(sessionStorage.getItem("existingUser"));
+            const userId = user ? user._id : null;         
+        if (!userId) {
+            console.log("User ID not found in sessionStorage.");
+            return;
+        }
+        console.log("User ID from sessionStorage:", userId);
+        
+        const quantity = 2;
+        try {
+            const result = await addToCartApi({ slug, userId, quantity });
+            console.log(slug);
+            console.log(userId);
+            console.log(quantity);
 
-
-
+            
+            if (result.status === 200) {
+                console.log("Product added successfully");
+            }
+        } catch (error) {
+            console.log("Error adding product to cart:", error.message);
+        }
+    };
+    
     // const handleAddToCart = async ( productId, quantity = 1) => {
     //     const user = JSON.parse(sessionStorage.getItem("existingUser"));
     //     const userId = user ? user._id : null; 
@@ -172,7 +197,7 @@ function ProductDetails() {
                                     e.target.style.borderColor = '#76453f';
                                 }}
 
-                            // onClick={handleAddToCart()}
+                            onClick={handleAddToCart}
 
                             >
                                 Cart

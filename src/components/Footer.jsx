@@ -48,7 +48,7 @@ function Footer() {
         </div>
         <div className='col-md-1'></div>
         <p className=' mt-4 d-flex align-items-center justify-content-center'>© 2024 GlowMend cosmetic privat limited.
-        Marketed By.. <span><a href="https://www.linkedin.com/in/shanishaju/">Shani</a></span></p>
+        Developed By.. <span><a href="https://www.linkedin.com/in/shanishaju/">Shani</a></span></p>
     </div>
     
   )
