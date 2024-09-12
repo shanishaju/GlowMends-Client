@@ -1,18 +1,49 @@
-
-/* three */
 .circle-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
+
+.circle1 {
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: blink 1.5s infinite step-start;
+  box-shadow: 0 0 5px rgb(241, 82, 109); /* Add shadow effect */
+}
+
+/* Define the keyframe for the blinking effect */
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Add different delays for each circle */
+.circle1:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.circle1:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.circle1:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/*  */
 
 .circle {
-    width: 10px;
-    height: 10px;
-    background-color: pink;
-    border-radius: 50%;
-    margin: 0 5px;
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border-radius: 50%;
+  margin: 0 5px;
 }
+
 /* promisSec */
 .primise:hover {
     transform: scale(0.7);

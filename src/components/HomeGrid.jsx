@@ -27,9 +27,9 @@ function HomeGrid() {
                         <p>Your Perfect Travel Companion!</p>
                         <button className='btn btn-secondary'>Shop Now</button>
                         <div className="circle-container">
-                            <div className="circle"></div>
-                            <div className="circle"></div>
-                            <div className="circle"></div>
+                            <div className="circle1"></div>
+                            <div className="circle1"></div>
+                            <div className="circle1"></div>
                         </div>
                         <img src={bglady} alt="" />
                     </div>

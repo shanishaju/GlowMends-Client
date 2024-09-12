@@ -29,16 +29,16 @@ export const getSingleProductApi = async (_id, reqHeader) => {
   
 
 // add to cart
-export const addToCartApi = async (reqBody, reqHeader) => {
-    return await commonApi("POST",`${serverUrl}/add-cart`, reqBody, reqHeader);
+export const addToCartApi = async (reqBody) => {
+    return await commonApi("POST",`${serverUrl}/add-cart`, reqBody);
 }
 
 
+//get single product
 
-
-
-
-
+export const getCartProductApi = async (_id, reqHeader) => {
+    return await commonApi("GET", `${serverUrl}/getcart/${_id}`, reqHeader);
+  };
 
 
 

@@ -2,7 +2,6 @@ import { Stack } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import img from '../assets/lipbalmforu.jpg'
 import { addToCartApi, getSingleProductApi } from '../services/allApi'
 import { useParams } from 'react-router-dom'
 import { serverUrl } from '../services/serverUrl'
@@ -12,6 +11,8 @@ function ProductDetails() {
     //Use const { id } = useParams(); to extract URL parameters in a React component.
     const { slug } = useParams();
     console.log(slug);
+    const productId = slug    
+
     const [product, setProduct] = useState(null);
 
     //id sending to server for getting single product details  
@@ -36,23 +37,23 @@ function ProductDetails() {
     // add to cart
     const handleAddToCart = async () => {
         const user = JSON.parse(sessionStorage.getItem("existingUser"));
-            const userId = user ? user._id : null;         
+            const userId = user ? user._id : null;     
         if (!userId) {
             console.log("User ID not found in sessionStorage.");
             return;
         }
         console.log("User ID from sessionStorage:", userId);
         
-        const quantity = 2;
+        const quantity = 1;
         try {
-            const result = await addToCartApi({ slug, userId, quantity });
-            console.log(slug);
+            const result = await addToCartApi({ productId, userId, quantity });
+            console.log(productId);
             console.log(userId);
             console.log(quantity);
 
             
             if (result.status === 200) {
-                console.log("Product added successfully");
+                alert("Product added to cart")
             }
         } catch (error) {
             console.log("Error adding product to cart:", error.message);

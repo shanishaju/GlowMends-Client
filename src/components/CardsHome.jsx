@@ -36,9 +36,10 @@ function CardsHome() {
                                 <Card.Img className='' variant="top" src={img1} style={{ height: "75%" }} />
                                 <Card.Body>
                                     <Card.Title>ETERNELLE - Anti-Aging Serum</Card.Title>
-                                    <div className='d-flex justify-content-between mt-3'>
-                                        <FontAwesomeIcon icon={faHeart} />
-                                        <FontAwesomeIcon icon={faSearch} />
+                                    <div className="circle-container pb-5">
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -48,9 +49,10 @@ function CardsHome() {
                                 <Card.Img className='' variant="top" src={img2} style={{ height: "75%" }} />
                                 <Card.Body>
                                     <Card.Title>SKINTILLATE - Booster Oil</Card.Title>
-                                    <div className='d-flex justify-content-between mt-3'>
-                                        <FontAwesomeIcon icon={faHeart} />
-                                        <FontAwesomeIcon icon={faSearch} />
+                                    <div className="circle-container pb-5">
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -60,9 +62,10 @@ function CardsHome() {
                                 <Card.Img className='' variant="top" src={img3} style={{ height: "200%" }} />
                                 <Card.Body>
                                     <Card.Title>ILLUMINATE - Glow Serum</Card.Title>
-                                    <div className='d-flex justify-content-between mt-3'>
-                                        <FontAwesomeIcon icon={faHeart} />
-                                        <FontAwesomeIcon icon={faSearch} />
+                                    <div className="circle-container pb-5">
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -72,9 +75,10 @@ function CardsHome() {
                                 <Card.Img className='' variant="top" src={img4} style={{ height: "200%" }} />
                                 <Card.Body>
                                     <Card.Title>REJUVENATE - Night Serum        </Card.Title>
-                                    <div className='d-flex justify-content-between mt-3'>
-                                        <FontAwesomeIcon icon={faHeart} />
-                                        <FontAwesomeIcon icon={faSearch} />
+                                    <div className="circle-container pb-5">
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
+                                        <div className="circle"></div>
                                     </div>
                                 </Card.Body>
                             </Card>
