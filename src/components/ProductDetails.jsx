@@ -40,6 +40,7 @@ function ProductDetails() {
             const userId = user ? user._id : null;     
         if (!userId) {
             console.log("User ID not found in sessionStorage.");
+            alert("Please login")
             return;
         }
         console.log("User ID from sessionStorage:", userId);
