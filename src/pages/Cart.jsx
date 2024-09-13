@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { addToCartApi, getCartProductApi } from '../services/allApi';
+import { addToCartApi, getCartProductApi, removeCartApi } from '../services/allApi';
 import { serverUrl } from '../services/serverUrl';
 
 function Cart() {
   // State to manage the cart products
   const [cartProduct, setCartProduct] = useState([]);
   const user = JSON.parse(sessionStorage.getItem("existingUser"));
-  const userId = user ? user._id : null;
+  const userId = user ? user._id : "";
 
+    
+  const [productId, setProductId] = useState([]);
+  // console.log(productId);
   // Fetch cart products when the component mounts
   const getcartProducts = async () => {
     try {
@@ -19,6 +22,9 @@ function Cart() {
       }
 
       const result = await getCartProductApi(userId);
+      const productIds = result.data.items.map(item => item?.productId?._id); 
+        setProductId(productIds); 
+        // console.log("Product IDs:", productIds);
 
       if (result && result.data && Array.isArray(result.data.items)) {
         setCartProduct(result.data.items);
@@ -40,8 +46,9 @@ function Cart() {
       )
     );
 
-    // Update the quantity on the server
     const updatedItem = cartProduct.find(item => item.productId._id === productId);
+    // console.log(updatedItem);
+    
     await addToCartApi({ quantity: updatedItem.quantity + 1, userId, productId });
   };
 
@@ -57,10 +64,33 @@ function Cart() {
         )
       );
 
-      // Update the quantity on the server
       await addToCartApi({ quantity: updatedItem.quantity - 1, userId, productId });
     }
   };
+
+// Function to remove an item from the cart
+const deleteCart = async (productId) => {
+  
+  try {
+    const userIdString = userId.toString();
+    const productIdString = productId.toString();
+    const response = await removeCartApi(userIdString, productIdString );
+
+    // console.log("User ID:", userId);
+    // console.log("Product ID:", productId);
+
+    if (response && response.status === 200) {
+      console.log("Product removed from cart successfully.");
+      // Update the cartProduct state to remove the deleted item
+      setCartProduct(prevCart => prevCart.filter(item => item.productId._id !== productId));
+    } else {
+      console.error("Failed to remove product from cart.");
+    }
+  } catch (error) {
+    console.error("Error removing product from cart:", error.message || error);
+  }
+};
+
 
   // Calculate the total price based on the quantity
   const calculateTotalPrice = () =>
@@ -68,6 +98,7 @@ function Cart() {
 
   useEffect(() => {
     getcartProducts();
+    
   }, []);
 
   return (
@@ -79,12 +110,13 @@ function Cart() {
         {/* Items in the cart */}
         <div className="row">
           <div className="col-md-12">
-            <table className="table table-bordered mt-5">
+            <table className="table  mt-5">
               <thead>
                 <tr>
                   <th className="p-3 text-dark text-left" style={{ width: "50%" }}>Product</th>
                   <th className="p-3 text-dark text-center" style={{ width: "25%" }}>Quantity</th>
                   <th className="p-3 text-dark text-center" style={{ width: "25%" }}>Total</th>
+                  <th className="p-3 text-dark text-center" style={{ width: "10%" }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -109,11 +141,14 @@ function Cart() {
                       <td className="text-center">
                         ₹ {item.productId.price * item.quantity}
                       </td>
+                      <td className="text-center">
+                        <button className="btn btn-danger" onClick={() => deleteCart(item.productId._id)}>Remove</button>
+                      </td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="3" className="text-center">No products in cart</td>
+                    <td colSpan="4" className="text-center">No products in cart</td>
                   </tr>
                 )}
               </tbody>

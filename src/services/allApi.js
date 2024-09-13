@@ -34,12 +34,16 @@ export const addToCartApi = async (reqBody) => {
 }
 
 
-//get single product
+//get cart product
 
 export const getCartProductApi = async (_id, reqHeader) => {
     return await commonApi("GET", `${serverUrl}/getcart/${_id}`, reqHeader);
   };
 
+// remove from cart
+export const removeCartApi = async (userId, productId,reqHeader) => {
+    return await commonApi("DELETE", `${serverUrl}/remove/${userId}/${productId}`,reqHeader);
+  };
 
 
 //query parameter = baseurl?key=value
