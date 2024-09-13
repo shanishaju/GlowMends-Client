@@ -6,7 +6,8 @@ import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 function QuoteSec() {
     return (
         <>
-            <div className="row d-flex align-items-center justify-content-center mt-5 rounded-right" style={{ backgroundColor: "#76453f", width:"80%" , marginLeft:"10%", borderRadius:"30px"}} >
+<div style={{height:"100vh"} } className="d-flex align-items-center justify-content-center">
+<div className="row d-flex align-items-center justify-content-center mt-5 rounded-right" style={{ backgroundColor: "#76453f", width:"80%" , borderRadius:"30px"}} >
                 <div className="col-md-2"></div>
 
                 <div className="col-md-4 quotes ">
@@ -18,10 +19,11 @@ function QuoteSec() {
                         <FontAwesomeIcon className='fs-1 ' icon={faQuoteRight} style={{ color: "#c6a58d" }} />
                     </span>
                 </div>
-                <div className="col-md-6">
-                    <img className='ms-5 rounded-circle m-3' src={girl} alt="noimg"  />
+                <div className="col-md-6" >
+                    <img className='ms-5 rounded-circle m-3' style={{borderRight:"5px dotted #c6a58d"}} src={girl} alt="noimg"  />
                 </div> 
-            </div>             
+            </div>  
+    </div>           
 
         </>
     )
