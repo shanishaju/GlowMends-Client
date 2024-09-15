@@ -36,7 +36,7 @@ function Cart() {
     }
   };
 
-  // Function to handle increasing quantity for a specific product
+  // Function to handle increasing quantity for a specific products
   const handleIncrease = async (productId) => {
     setCartProduct(prevCart =>
       prevCart.map(item =>
